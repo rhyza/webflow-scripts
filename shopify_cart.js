@@ -21,7 +21,7 @@
     script.onload = ShopifyBuyInit;
   }
   function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient(client);
+    var client = ShopifyBuy.buildClient(clientData);
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("cart", {
         moneyFormat: "%24%7B%7Bamount%7D%7D",
