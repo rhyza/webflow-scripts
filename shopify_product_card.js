@@ -1,13 +1,11 @@
 /**
 * Script that creates an embeddable Shopify Product showing only a photo, name,
-* and price.
+* and price. Meant to be used as part of a Webflow Collection List. File cannot
+* be used on its own, especially when on the same page as other product cards.
 * Use with the corresponding Webflow embed code:
 <div id="product-component-{{Shopify Product ID}}"></div>
 <script
-  id="product-component-{{Shopify Product ID}}"
-  product-id="{{Shopify Product ID}}"
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/rhyza/webflow-scripts@latest/shopify_product_card.min.js">
+  {{copy script content here}}
 </script>
 */
 
@@ -35,8 +33,7 @@
   }
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient(clientData);
-    var scriptId = document.getElementById(`product-script-${productId}`);
-    var productId = scriptId.getAttribute("product-id");
+    var productId = "{{Shopify Product ID}}"; // Replace with Field variable
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
         id: productId,
