@@ -4,7 +4,7 @@
 * Use with the corresponding Webflow embed code:
 <div id="product-component-{{Shopify Product ID}}"></div>
 <script
-  id="product-component"
+  id="product-component-{{Shopify Product ID}}"
   product-id="{{Shopify Product ID}}"
   type="text/javascript"
   src="https://cdn.jsdelivr.net/gh/rhyza/webflow-scripts@latest/shopify_product_card.min.js">
@@ -35,7 +35,7 @@
   }
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient(clientData);
-    var scriptId = document.getElementById("product-component");
+    var scriptId = document.getElementById(`product-script-${productId}`);
     var productId = scriptId.getAttribute("product-id");
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
