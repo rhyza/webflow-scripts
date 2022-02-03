@@ -23,7 +23,7 @@
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient(clientData);
     var scriptId = document.getElementById("product-component");
-    var productId = script_tag.getAttribute("product-id");
+    var productId = scriptId.getAttribute("product-id");
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
         id: productId,
