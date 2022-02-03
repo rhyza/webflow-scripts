@@ -1,3 +1,15 @@
+/**
+* Script that creates an embeddable Shopify Product Buy Button (full view).
+* Use with the corresponding Webflow embed code:
+<div id="product-component-1643788609937"></div>
+<script
+  id="product-component"
+  product-id="{{Shopify Product ID}}"
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/rhyza/webflow-scripts@latest/shopify_product.min.js">
+</script>
+*/
+
 (function () {
   var scriptURL =
     "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
@@ -34,23 +46,46 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "calc(25% - 20px)",
-                  "margin-left": "20px",
+                  "max-width": "100%",
+                  "margin-left": "0",
                   "margin-bottom": "50px",
                 },
+                "text-align": "left",
+              },
+              title: {
+                "font-size": "26px",
               },
               button: {
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
+              },
+              price: {
+                "font-size": "18px",
+              },
+              compareAt: {
+                "font-size": "15.299999999999999px",
+              },
+              unitPrice: {
+                "font-size": "15.299999999999999px",
               },
             },
+            layout: "horizontal",
             contents: {
+              img: false,
+              imgWithCarousel: true,
               button: false,
+              buttonWithQuantity: true,
+              description: true,
+            },
+            width: "100%",
+            text: {
+              button: "Add to cart",
             },
           },
           productSet: {
@@ -77,12 +112,37 @@
               },
               button: {
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
+              },
+              title: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "bold",
+                "font-size": "26px",
+                color: "#4c4c4c",
+              },
+              price: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "normal",
+                "font-size": "18px",
+                color: "#4c4c4c",
+              },
+              compareAt: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "normal",
+                "font-size": "15.299999999999999px",
+                color: "#4c4c4c",
+              },
+              unitPrice: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "normal",
+                "font-size": "15.299999999999999px",
+                color: "#4c4c4c",
               },
             },
             text: {
@@ -94,12 +154,13 @@
             styles: {
               button: {
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
               },
             },
             text: {
@@ -111,12 +172,12 @@
           toggle: {
             styles: {
               toggle: {
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
               },
             },

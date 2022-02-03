@@ -1,3 +1,12 @@
+/**
+* Script that creates an embeddable Shopify shopping cart.
+* Use with the corresponding Webflow embed code:
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/rhyza/webflow-scripts@latest/shopify_cart.min.js">
+</script>
+*/
+
 (function () {
   var scriptURL =
     "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
@@ -30,12 +39,13 @@
             styles: {
               button: {
                 ":hover": {
-                  "background-color": "#278bb8",
+                  "background-color": "#000000",
                 },
-                "background-color": "#2b9acc",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#278bb8",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
               },
             },
             text: {
@@ -47,13 +57,14 @@
           toggle: {
             styles: {
               toggle: {
-                "background-color": "#2b9acc",
+                "background-color": "#000000",
                 ":hover": {
-                  "background-color": "#278bb8",
+                  "background-color": "#000000",
                 },
                 ":focus": {
-                  "background-color": "#278bb8",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
               },
             },
           },

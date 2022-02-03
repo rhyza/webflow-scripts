@@ -1,3 +1,16 @@
+/**
+* Script that creates an embeddable Shopify Collection Buy Button (open product
+* details).
+* Use with the corresponding Webflow embed code:
+<div id="collection-component-1643779310543"></div>
+<script
+  id="collection-component"
+  collection-id="{{Shopify Collection ID}}"
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/rhyza/webflow-scripts@latest/shopify_collection.min.js">
+</script>
+*/
+
 (function () {
   var scriptURL =
     "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
@@ -21,13 +34,12 @@
     script.onload = ShopifyBuyInit;
   }
   function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: "dgawrath.myshopify.com",
-      storefrontAccessToken: "23c68388653682e0c109fc5a0bede23d",
-    });
+    var client = ShopifyBuy.buildClient(clientData);
+    var scriptId = document.getElementById("collection-component");
+    var collectionId = scriptId.getAttribute("collection-id");
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("collection", {
-        id: "285094052039",
+        id: collectionId,
         node: document.getElementById("collection-component-1643779310543"),
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
@@ -55,12 +67,13 @@
               },
               button: {
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
               },
             },
             buttonDestination: "modal",
@@ -86,6 +99,8 @@
             contents: {
               img: false,
               imgWithCarousel: true,
+              button: false,
+              buttonWithQuantity: true,
             },
             styles: {
               product: {
@@ -97,12 +112,13 @@
               },
               button: {
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
               },
             },
             text: {
@@ -114,12 +130,13 @@
             styles: {
               button: {
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
+                "border-radius": "0px",
               },
             },
             text: {
@@ -131,12 +148,12 @@
           toggle: {
             styles: {
               toggle: {
-                "background-color": "#1b5873",
+                "background-color": "#000000",
                 ":hover": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
                 ":focus": {
-                  "background-color": "#184f68",
+                  "background-color": "#000000",
                 },
               },
             },
