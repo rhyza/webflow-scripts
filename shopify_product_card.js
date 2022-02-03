@@ -2,7 +2,7 @@
 * Script that creates an embeddable Shopify Product showing only a photo, name,
 * and price.
 * Use with the corresponding Webflow embed code:
-<div id="product-component-1643788609937"></div>
+<div id="product-component-{{Shopify Product ID}}"></div>
 <script
   id="product-component"
   product-id="{{Shopify Product ID}}"
@@ -40,7 +40,7 @@
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
         id: productId,
-        node: document.getElementById("product-component-1643788609937"),
+        node: document.getElementById(`product-component-${productId}`),
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
           product: {
