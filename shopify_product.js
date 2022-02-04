@@ -36,6 +36,7 @@
     var client = ShopifyBuy.buildClient(clientData);
     var scriptId = document.getElementById("product-script");
     var productId = scriptId.getAttribute("product-id");
+
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
         id: productId,
@@ -43,38 +44,7 @@
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
           product: {
-            styles: {
-              product: {
-                "@media (min-width: 601px)": {
-                  "max-width": "100%",
-                  "margin-left": "0",
-                  "margin-bottom": "50px",
-                },
-                "text-align": "left",
-              },
-              title: {
-                "font-size": "26px",
-              },
-              button: {
-                ":hover": {
-                  "background-color": "#000000",
-                },
-                "background-color": "#000000",
-                ":focus": {
-                  "background-color": "#000000",
-                },
-                "border-radius": "0px",
-              },
-              price: {
-                "font-size": "18px",
-              },
-              compareAt: {
-                "font-size": "15.299999999999999px",
-              },
-              unitPrice: {
-                "font-size": "15.299999999999999px",
-              },
-            },
+            styles: productStyles,
             layout: "horizontal",
             contents: {
               img: false,
@@ -84,7 +54,7 @@
               description: true,
             },
             width: "100%",
-            "googleFonts": [],
+            googleFonts: googleFontList,
             text: {
               button: "Add to cart",
             },
@@ -100,18 +70,7 @@
           },
           option: {},
           cart: {
-            styles: {
-              button: {
-                ":hover": {
-                  "background-color": "#000000",
-                },
-                "background-color": "#000000",
-                ":focus": {
-                  "background-color": "#000000",
-                },
-                "border-radius": "0px",
-              },
-            },
+            styles: cartStyles,
             text: {
               total: "Subtotal",
               button: "Checkout",
@@ -119,20 +78,88 @@
             popup: false,
           },
           toggle: {
-            styles: {
-              toggle: {
-                "background-color": "#000000",
-                ":hover": {
-                  "background-color": "#000000",
-                },
-                ":focus": {
-                  "background-color": "#000000",
-                },
-              },
-            },
+            styles: toggleStyles,
           },
         },
       });
     });
   }
 })();
+
+// STYLES
+
+var primaryColor = "#000000";
+var secondaryColor = "#6F897E";
+var googleFontList = [];
+var paragraphStyle = {
+  "font-size": "1em",
+  "line-height": "1.6",
+  color: primaryColor,
+};
+
+var productStyles = {
+  product: {
+    "@media (min-width: 601px)": {
+      "max-width": "100%",
+      "margin-left": "0",
+      "margin-bottom": "50px",
+    },
+    "text-align": "left",
+  },
+  title: {
+    ...paragraphStyle,
+    "font-size": "2.5em",
+    "line-height": "1.4",
+    "margin-bottom": "0",
+  },
+  buttonWithQuantity: {
+    "margin-top": "2em !important",
+    "margin-bottom": "2em !important",
+  },
+  button: {
+    ":hover": {
+      "background-color": secondaryColor,
+    },
+    "background-color": primaryColor,
+    ":focus": {
+      "background-color": primaryColor,
+    },
+    "border-radius": "0px",
+  },
+  prices: {
+    "margin-bottom": ".6em",
+  },
+  price: {
+    ...paragraphStyle,
+    "font-size": "1.25em",
+    "line-height": "1.4",
+  },
+  compareAt: paragraphStyle,
+  unitPrice: paragraphStyle,
+  description: paragraphStyle,
+};
+
+var cartStyles = {
+  button: {
+    ":hover": {
+      "background-color": secondaryColor,
+    },
+    "background-color": primaryColor,
+    ":focus": {
+      "background-color": primaryColor,
+    },
+    "border-radius": "0px",
+  },
+};
+
+var toggleStyles = {
+  toggle: {
+    "background-color": primaryColor,
+    ":hover": {
+      "background-color": secondaryColor,
+    },
+    ":focus": {
+      "background-color": primaryColor,
+    },
+  },
+};
