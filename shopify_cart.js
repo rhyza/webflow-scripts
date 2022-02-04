@@ -1,5 +1,6 @@
 /**
 * Script that creates an embeddable Shopify shopping cart.
+* Component styles can be overriden by defining cartStyles and toggleStyles. 
 * Use with the corresponding Webflow embed code:
 <script
   type="text/javascript"
@@ -36,18 +37,7 @@
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
           cart: {
-            styles: {
-              button: {
-                ":hover": {
-                  "background-color": "#000000",
-                },
-                "background-color": "#000000",
-                ":focus": {
-                  "background-color": "#000000",
-                },
-                "border-radius": "0px",
-              },
-            },
+            styles: typeof cartStyles !== 'undefined' ? cartStyles : defaultCartStyles,
             text: {
               total: "Subtotal",
               button: "Checkout",
@@ -55,21 +45,38 @@
             popup: false,
           },
           toggle: {
-            styles: {
-              toggle: {
-                "background-color": "#000000",
-                ":hover": {
-                  "background-color": "#000000",
-                },
-                ":focus": {
-                  "background-color": "#000000",
-                },
-                "border-radius": "0px",
-              },
-            },
+            styles: typeof toggleStyles !== 'undefined' ? toggleStyles : defaultToggleStyles,
           },
         },
       });
     });
   }
 })();
+
+// DEFAULT STYLES
+
+var defaultCartStyles = {
+  button: {
+    ":hover": {
+      "background-color": "#000000",
+    },
+    "background-color": "#000000",
+    ":focus": {
+      "background-color": "#000000",
+    },
+    "border-radius": "0px",
+  },
+};
+
+var defaultToggleStyles = {
+  toggle: {
+    "background-color": "#000000",
+    ":hover": {
+      "background-color": "#000000",
+    },
+    ":focus": {
+      "background-color": "#000000",
+    },
+    "border-radius": "0px",
+  },
+};
