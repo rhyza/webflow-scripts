@@ -33,7 +33,7 @@
   }
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient(clientData);
-    var productId = "{{Shopify Product ID}}"; // Replace with Field variable
+    var productId = "\{\{Shopify Product ID\}\}"; // Replace with Field variable
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
         id: productId,
@@ -50,9 +50,41 @@
                 },
               },
             },
+            order: ["img", "title", "price"],
             contents: {
+              title: true,
               button: false,
               options: false,
+            },
+            iframe: false,
+            templates: {
+              title:
+                '<div class="\{\{data.classes.product.title\}\}" data-element="product.title">\{\{data.title\}\}</div>',
+              price: `<div class="\{\{data.classes.product.prices\}\}" data-element="product.prices">
+                        \{\{#data.selectedVariant\}\}
+                        <span class="hidden">\{\{data.priceAccessibilityLabel\}\}&nbsp;</span>
+                        <span class="\{\{data.classes.product.price\}\} \{\{data.priceClass\}\}" data-element="product.price">\{\{data.formattedPrice\}\}</span>
+                        \{\{#data.hasCompareAtPrice\}\}
+                        <span class="hidden">\{\{data.compareAtPriceAccessibilityLabel\}\}&nbsp;</span>
+                        <span class="\{\{data.classes.product.compareAt\}\}" data-element="product.compareAt">\{\{data.formattedCompareAtPrice\}\}</span>
+                        \{\{/data.hasCompareAtPrice\}\}
+                        \{\{#data.showUnitPrice\}\}
+                        <div class="\{\{data.classes.product.unitPrice\}\}" data-element="product.unitPrice">
+                          <span class="hidden">\{\{data.text.unitPriceAccessibilityLabel\}\}</span>
+                          \{\{data.formattedUnitPrice\}\}<span aria-hidden="true">/</span><span class="hidden">&nbsp;\{\{data.text.unitPriceAccessibilitySeparator\}\}&nbsp;</span>\{\{data.formattedUnitPriceBaseUnit\}\}
+                        </div>
+                        \{\{/data.showUnitPrice\}\}
+                        \{\{/data.selectedVariant\}\}
+                      </div>`,
+            },
+            classes: {
+              wrapper: "product-wrapper",
+              product: "product",
+              img: "product-image",
+              imgWrapper: "product-image-wrapper",
+              title: "product-name",
+              prices: "product-price-wrapper",
+              price: "product-price",
             },
           },
         },
