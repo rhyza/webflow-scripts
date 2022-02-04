@@ -1,9 +1,9 @@
 /**
 * Script that creates an embeddable Shopify Product Buy Button (full view).
 * Use with the corresponding Webflow embed code:
-<div id="product-component-1643788609937"></div>
+<div id="product-component"></div>
 <script
-  id="product-component"
+  id="product-script"
   product-id="{{Shopify Product ID}}"
   type="text/javascript"
   src="https://cdn.jsdelivr.net/gh/rhyza/webflow-scripts@latest/shopify_product.min.js">
@@ -34,12 +34,12 @@
   }
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient(clientData);
-    var scriptId = document.getElementById("product-component");
+    var scriptId = document.getElementById("product-script");
     var productId = scriptId.getAttribute("product-id");
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
         id: productId,
-        node: document.getElementById("product-component-1643788609937"),
+        node: document.getElementById("product-component"),
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
           product: {
@@ -95,58 +95,6 @@
                   "margin-left": "-20px",
                 },
               },
-            },
-          },
-          modalProduct: {
-            contents: {
-              img: false,
-              imgWithCarousel: true,
-            },
-            styles: {
-              product: {
-                "@media (min-width: 601px)": {
-                  "max-width": "100%",
-                  "margin-left": "0px",
-                  "margin-bottom": "0px",
-                },
-              },
-              button: {
-                ":hover": {
-                  "background-color": "#000000",
-                },
-                "background-color": "#000000",
-                ":focus": {
-                  "background-color": "#000000",
-                },
-                "border-radius": "0px",
-              },
-              title: {
-                "font-family": "Helvetica Neue, sans-serif",
-                "font-weight": "bold",
-                "font-size": "26px",
-                color: "#4c4c4c",
-              },
-              price: {
-                "font-family": "Helvetica Neue, sans-serif",
-                "font-weight": "normal",
-                "font-size": "18px",
-                color: "#4c4c4c",
-              },
-              compareAt: {
-                "font-family": "Helvetica Neue, sans-serif",
-                "font-weight": "normal",
-                "font-size": "15.299999999999999px",
-                color: "#4c4c4c",
-              },
-              unitPrice: {
-                "font-family": "Helvetica Neue, sans-serif",
-                "font-weight": "normal",
-                "font-size": "15.299999999999999px",
-                color: "#4c4c4c",
-              },
-            },
-            text: {
-              button: "Add to cart",
             },
           },
           option: {},
