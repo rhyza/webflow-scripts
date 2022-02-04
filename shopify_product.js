@@ -84,6 +84,7 @@
               description: true,
             },
             width: "100%",
+            "googleFonts": [],
             text: {
               button: "Add to cart",
             },
