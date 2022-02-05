@@ -41,7 +41,7 @@ const variantTitleTemplate =
   '\{\{#data.hasVariants\}\}<h2 class="\{\{data.classes.product.variantTitle\}\}" data-element="product.variantTitle">\{\{data.selectedVariant.title\}\}</h2>\{\{/data.hasVariants\}\}';
 
 const optionsTemplate =
-  '\{\{#data.hasVariants\}\}<div class="\{\{data.classes.product.options\}\}" data-element="product.options">\{\\{\{data.optionsHtml\}\\}\}</div>\{\{/data.hasVariants\}\}';
+  '\{\{#data.hasVariants\}\}<div class="\{\{data.classes.product.options\}\}" data-element="product.options">\{\{\{data.optionsHtml\}\}\}</div>\{\{/data.hasVariants\}\}';
 
 const priceTemplate = `<div class="\{\{data.classes.product.prices\}\}" data-element="product.prices">
           \{\{#data.selectedVariant\}\}
@@ -61,7 +61,7 @@ const priceTemplate = `<div class="\{\{data.classes.product.prices\}\}" data-ele
         </div>`;
 
 const descriptionTemplate =
-  '<div class="\{\{data.classes.product.description\}\}" data-element="product.description">\{\\{\{data.descriptionHtml\}\\}\}</div>';
+  '<div class="\{\{data.classes.product.description\}\}" data-element="product.description">\{\{\{data.descriptionHtml\}\}\}</div>';
 
 const buttonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
 
