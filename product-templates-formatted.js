@@ -94,7 +94,7 @@ var defaultDetailsTemplate = `<div class="\{\{data.classes.product.details\}\}" 
     ${defaultDescriptionTemplate}
   </div>`;
 
-export var defaultProductTemplate = {
+var defaultProductTemplate = {
   img: defaultImgTemplate,
   imgWithCarousel: defaultImgWithCarouselTemplate,
   title: defaultTitleTemplate,
