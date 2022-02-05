@@ -259,9 +259,18 @@ var defaultPriceTemplate = `<div class="\{\{data.classes.product.prices\}\}" dat
 var defaultDescriptionTemplate =
   '<div class="\{\{data.classes.product.description\}\}" data-element="product.description">\{\{\{data.descriptionHtml\}\}\}</div>';
 
-var defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
+var defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${defaultQuantityTemplate}${defaultButtonTemplate}</div>`;
 
 var defaultDetailsTemplate = `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
+    ${defaultTitleTemplate}
+    ${defaultVariantTitleTemplate}
+    ${defaultPriceTemplate}
+    ${defaultOptionsTemplate}
+    ${defaultButtonTemplate}
+    ${defaultDescriptionTemplate}
+  </div>`;
+
+var defaultDetailsWithQuantityTemplate = `<div class="\{\{data.classes.product.detailsWithQuantity\}\}" data-element="product.detailsWithQuantity">
     ${defaultTitleTemplate}
     ${defaultVariantTitleTemplate}
     ${defaultPriceTemplate}
@@ -283,6 +292,7 @@ var defaultProductTemplate = {
   buttonWithQuantity: defaultButtonWithQuantityTemplate,
   description: defaultDescriptionTemplate,
   details: defaultDetailsTemplate,
+  detailsWithQuantity: defaultDetailsWithQuantityTemplate,
 };
 
 // ADDITIONAL OPTIONS
