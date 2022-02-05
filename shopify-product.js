@@ -92,8 +92,6 @@ var defaultContentSettings = {
   button: false,
   buttonWithQuantity: true,
   description: true,
-  details: false,
-  detailsWithQuantity: false,
 };
 
 // STYLES
