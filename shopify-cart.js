@@ -37,15 +37,17 @@
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
           cart: {
-            styles: {...defaultCartStyles, ...cartStyles},
+            styles: { ...defaultCartStyles, ...cartStyles },
             text: {
               total: "Subtotal",
               button: "Checkout",
             },
             popup: false,
+            ...cartOptions,
           },
           toggle: {
-            styles: {...defaultToggleStyles, ...toggleStyles},
+            styles: { ...defaultToggleStyles, ...toggleStyles },
+            ...toggleOptions,
           },
         },
       });
@@ -82,3 +84,6 @@ var defaultToggleStyles = {
     "border-radius": "0px",
   },
 };
+
+var cartOptions;
+var toggleOptions;

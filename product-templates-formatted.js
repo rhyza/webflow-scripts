@@ -1,5 +1,4 @@
-const quantityTemplate =
-  `<div class="\{\{data.classes.product.quantity\}\} \{\{data.quantityClass\}\}" data-element="product.quantity">
+const defaultQuantityTemplate = `<div class="\{\{data.classes.product.quantity\}\} \{\{data.quantityClass\}\}" data-element="product.quantity">
     \{\{#data.contents.quantityDecrement\}\}
     <button class="\{\{data.classes.product.quantityButton\}\} \{\{data.classes.product.quantityDecrement\}\}" type="button" data-element="product.quantityDecrement">
       <span>-</span>
@@ -17,22 +16,19 @@ const quantityTemplate =
     \{\{/data.contents.quantityIncrement\}\}
   </div>`;
 
-const buttonTemplate =
-  `<div class="\{\{data.classes.product.buttonWrapper\}\}" data-element="product.buttonWrapper">
+const defaultButtonTemplate = `<div class="\{\{data.classes.product.buttonWrapper\}\}" data-element="product.buttonWrapper">
     <button \{\{#data.buttonDisabled\}\}disabled\{\{/data.buttonDisabled\}\} class="\{\{data.classes.product.button\}\} \{\{data.buttonClass\}\}" data-element="product.button">
       \{\{data.buttonText\}\}
     </button>
   </div>`;
 
-const imgTemplate =
-  `\{\{#data.currentImage.srcLarge\}\}
+const defaultImgTemplate = `\{\{#data.currentImage.srcLarge\}\}
   <div class="\{\{data.classes.product.imgWrapper\}\}" data-element="product.imgWrapper">
     <img alt="\{\{data.currentImage.altText\}\}" data-element="product.img" class="\{\{data.classes.product.img\}\}" src="\{\{data.currentImage.srcLarge\}\}" />
   </div>
   \{\{/data.currentImage.srcLarge\}\}`;
 
-const imgWithCarouselTemplate =
-  `<div class="\{\{data.classes.product.imgWrapper\}\}" data-element="product.imageWrapper">
+const defaultImgWithCarouselTemplate = `<div class="\{\{data.classes.product.imgWrapper\}\}" data-element="product.imageWrapper">
     <div class="main-image-wrapper">
       <button type="button" class="carousel-button carousel-button--previous">
         Left
@@ -51,21 +47,19 @@ const imgWithCarouselTemplate =
     </div>
   </div>`;
 
-const titleTemplate =
-  '<h1 class="\{\{data.classes.product.title\}\}" data-element="product.title">\{\{data.title\}\}</h1>';
+const defaultTitleTemplate =
+  '<h1 class="{{data.classes.product.title}}" data-element="product.title">{{data.title}}</h1>';
 
-const variantTitleTemplate =
-  '\{\{#data.hasVariants\}\}<h2 class="\{\{data.classes.product.variantTitle\}\}" data-element="product.variantTitle">\{\{data.selectedVariant.title\}\}</h2>\{\{/data.hasVariants\}\}';
+const defaultVariantTitleTemplate =
+  '{{#data.hasVariants}}<h2 class="{{data.classes.product.variantTitle}}" data-element="product.variantTitle">{{data.selectedVariant.title}}</h2>{{/data.hasVariants}}';
 
-const optionsTemplate =
-  `\{\{#data.hasVariants\}\}
+const defaultOptionsTemplate = `\{\{#data.hasVariants\}\}
   <div class="\{\{data.classes.product.options\}\}" data-element="product.options">
     \{\{\{data.optionsHtml\}\}\}
   </div>
   \{\{/data.hasVariants\}\}`;
 
-const priceTemplate =
-  `<div class="\{\{data.classes.product.prices\}\}" data-element="product.prices">
+const defaultPriceTemplate = `<div class="\{\{data.classes.product.prices\}\}" data-element="product.prices">
     \{\{#data.selectedVariant\}\}
     <span class="visuallyhidden">\{\{data.priceAccessibilityLabel\}\}&nbsp;</span>
     <span class="\{\{data.classes.product.price\}\} \{\{data.priceClass\}\}" data-element="product.price">\{\{data.formattedPrice\}\}</span>
@@ -85,32 +79,42 @@ const priceTemplate =
     \{\{/data.selectedVariant\}\}
   </div>`;
 
-const descriptionTemplate =
-  '<div class="\{\{data.classes.product.description\}\}" data-element="product.description">\{\{\{data.descriptionHtml\}\}\}</div>';
+const defaultDescriptionTemplate =
+  '<div class="{{data.classes.product.description}}" data-element="product.description">{{{data.descriptionHtml}}}</div>';
 
-const buttonWithQuantityTemplate =
-  `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
+const defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
 
-const detailsTemplate =
+const defaultDetailsTemplate =
   `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
-    ${titleTemplate}
-    ${variantTitleTemplate}
-    ${priceTemplate}
-    ${optionsTemplate}
-    ${buttonWithQuantityTemplate}
-    ${descriptionTemplate}
+    ${defaultTitleTemplate}
+    ${defaultTitleTemplate}
+    ${defaultPriceTemplate}
+    ${defaultOptionsTemplate}
+    ${defaultButtonTemplate}
+    ${defaultDescriptionTemplate}
   </div>`;
 
-const productTemplate = {
-  img: imgTemplate,
-  imgWithCarousel: imgWithCarouselTemplate,
-  title: titleTemplate,
-  variantTitle: variantTitleTemplate,
-  price: priceTemplate,
-  options: optionsTemplate,
-  quantity: quantityTemplate,
-  button: buttonTemplate,
-  buttonWithQuantity: buttonWithQuantityTemplate,
-  description: descriptionTemplate,
-  details: detailsTemplate,
+const defaultDetailsWithQuantityTemplate =
+  `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
+    ${defaultTitleTemplate}
+    ${defaultTitleTemplate}
+    ${defaultPriceTemplate}
+    ${defaultOptionsTemplate}
+    ${defaultButtonWithQuantityTemplate}
+    ${defaultDescriptionTemplate}
+  </div>`;
+
+const defaultProductTemplate = {
+  img: defaultImgTemplate,
+  imgWithCarousel: defaultImgWithCarouselTemplate,
+  title: defaultTitleTemplate,
+  variantTitle: defaultVariantTitleTemplate,
+  price: defaultPriceTemplate,
+  options: defaultOptionsTemplate,
+  quantity: defaultQuantityTemplate,
+  button: defaultButtonTemplate,
+  buttonWithQuantity: defaultButtonWithQuantityTemplate,
+  description: defaultDescriptionTemplate,
+  details: defaultDetailsTemplate,
+  detailsWithQuantity: defaultDetailsWithQuantityTemplate,
 };
