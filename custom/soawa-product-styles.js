@@ -11,7 +11,7 @@ var paragraphStyle = {
   color: primaryColor,
 };
 
-var cartStyles = {
+cartStyles = {
   button: {
     ":hover": {
       "background-color": secondaryColor,
@@ -24,7 +24,7 @@ var cartStyles = {
   },
 };
 
-var toggleStyles = {
+toggleStyles = {
   toggle: {
     "background-color": primaryColor,
     ":hover": {
@@ -88,11 +88,11 @@ var productStyles = {
   },
   compareAt: {
     ...paragraphStyle,
-    "margin-left": "0 !important"
+    "margin-left": "0 !important",
   },
   unitPrice: {
     ...paragraphStyle,
-    "margin-left": "0 !important"
+    "margin-left": "0 !important",
   },
   description: {
     ...paragraphStyle,
@@ -103,5 +103,24 @@ var productStyles = {
     display: "inline-block",
     width: "20em",
     "margin-left": "0 !important",
+  },
+};
+
+contentSettings = {
+  img: false,
+  imgWithCarousel: true,
+  title: false,
+  price: false,
+  unitPrice: false,
+  options: false,
+  quantityInput: false,
+  button: false,
+  detailsWithQuantity: true,
+};
+
+productOptions = {
+  order: ["imgWithCarousel", "detailsWithQuantity"],
+  classes: {
+    detailsWithQuantity: "product-details",
   },
 };
