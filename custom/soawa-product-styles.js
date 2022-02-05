@@ -23,6 +23,9 @@ cartStyles = {
     "border-radius": "0px",
   },
 };
+cartOptions = {
+  googleFonts: googleFontList,
+};
 
 toggleStyles = {
   toggle: {
@@ -35,10 +38,13 @@ toggleStyles = {
     },
   },
 };
+toggleOptions = {
+  googleFonts: googleFontList,
+};
 
 // BODY
 
-var productStyles = {
+productStyles = {
   product: {
     "@media (min-width: 479px)": {
       "max-width": "100%",
@@ -106,21 +112,20 @@ var productStyles = {
   },
 };
 
-contentSettings = {
-  img: false,
-  imgWithCarousel: true,
-  title: false,
-  price: false,
-  unitPrice: false,
-  options: false,
-  quantityInput: false,
-  button: false,
-  detailsWithQuantity: true,
-};
-
 productOptions = {
-  order: ["imgWithCarousel", "detailsWithQuantity"],
+  order: ["imgWithCarousel", "details"],
   classes: {
-    detailsWithQuantity: "product-details",
+    details: "product-details",
+  },
+  contentSettings: {
+    img: false,
+    imgWithCarousel: true,
+    title: false,
+    price: false,
+    unitPrice: false,
+    options: false,
+    quantityInput: false,
+    button: false,
+    details: true,
   },
 };

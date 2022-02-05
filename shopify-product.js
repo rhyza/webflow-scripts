@@ -264,16 +264,7 @@ var defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.bu
 
 var defaultDetailsTemplate = `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
     ${defaultTitleTemplate}
-    ${defaultTitleTemplate}
-    ${defaultPriceTemplate}
-    ${defaultOptionsTemplate}
-    ${defaultButtonTemplate}
-    ${defaultDescriptionTemplate}
-  </div>`;
-
-var defaultDetailsWithQuantityTemplate = `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
-    ${defaultTitleTemplate}
-    ${defaultTitleTemplate}
+    ${defaultVariantTitleTemplate}
     ${defaultPriceTemplate}
     ${defaultOptionsTemplate}
     ${defaultButtonWithQuantityTemplate}
@@ -293,7 +284,6 @@ var defaultProductTemplate = {
   buttonWithQuantity: defaultButtonWithQuantityTemplate,
   description: defaultDescriptionTemplate,
   details: defaultDetailsTemplate,
-  detailsWithQuantity: defaultDetailsWithQuantityTemplate,
 };
 
 // ADDITIONAL OPTIONS

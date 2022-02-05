@@ -87,17 +87,7 @@ const defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.
 const defaultDetailsTemplate =
   `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
     ${defaultTitleTemplate}
-    ${defaultTitleTemplate}
-    ${defaultPriceTemplate}
-    ${defaultOptionsTemplate}
-    ${defaultButtonTemplate}
-    ${defaultDescriptionTemplate}
-  </div>`;
-
-const defaultDetailsWithQuantityTemplate =
-  `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
-    ${defaultTitleTemplate}
-    ${defaultTitleTemplate}
+    ${defaultVariantTitleTemplate}
     ${defaultPriceTemplate}
     ${defaultOptionsTemplate}
     ${defaultButtonWithQuantityTemplate}
@@ -116,5 +106,4 @@ const defaultProductTemplate = {
   buttonWithQuantity: defaultButtonWithQuantityTemplate,
   description: defaultDescriptionTemplate,
   details: defaultDetailsTemplate,
-  detailsWithQuantity: defaultDetailsWithQuantityTemplate,
 };
