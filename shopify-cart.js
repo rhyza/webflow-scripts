@@ -1,6 +1,6 @@
 /**
 * Script that creates an embeddable Shopify shopping cart.
-* Component styles can be overriden by defining cartStyles and toggleStyles. 
+* Component styles can be overriden by defining cartStyles and toggleStyles.
 * Use with the corresponding Webflow embed code:
 <script
   type="text/javascript"
@@ -37,7 +37,7 @@
         moneyFormat: "%24%7B%7Bamount%7D%7D",
         options: {
           cart: {
-            styles: typeof cartStyles !== 'undefined' ? cartStyles : defaultCartStyles,
+            styles: {...defaultCartStyles, ...cartStyles},
             text: {
               total: "Subtotal",
               button: "Checkout",
@@ -45,7 +45,7 @@
             popup: false,
           },
           toggle: {
-            styles: typeof toggleStyles !== 'undefined' ? toggleStyles : defaultToggleStyles,
+            styles: {...defaultToggleStyles, ...toggleStyles},
           },
         },
       });
@@ -55,6 +55,7 @@
 
 // DEFAULT STYLES
 
+var cartStyles;
 var defaultCartStyles = {
   button: {
     ":hover": {
@@ -68,6 +69,7 @@ var defaultCartStyles = {
   },
 };
 
+var toggleStyles;
 var defaultToggleStyles = {
   toggle: {
     "background-color": "#000000",
