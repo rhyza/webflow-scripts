@@ -226,10 +226,10 @@ var defaultImgWithCarouselTemplate = `<div class="\{\{data.classes.product.imgWr
   </div>`;
 
 var defaultTitleTemplate =
-  '<h1 class="{{data.classes.product.title}}" data-element="product.title">{{data.title}}</h1>';
+  '<h1 class="\{\{data.classes.product.title\}\}" data-element="product.title">\{\{data.title\}\}</h1>';
 
 var defaultVariantTitleTemplate =
-  '{{#data.hasVariants}}<h2 class="{{data.classes.product.variantTitle}}" data-element="product.variantTitle">{{data.selectedVariant.title}}</h2>{{/data.hasVariants}}';
+  '\{\{#data.hasVariants\}\}<h2 class="\{\{data.classes.product.variantTitle\}\}" data-element="product.variantTitle">\{\{data.selectedVariant.title\}\}</h2>\{\{/data.hasVariants\}\}';
 
 var defaultOptionsTemplate = `\{\{#data.hasVariants\}\}
   <div class="\{\{data.classes.product.options\}\}" data-element="product.options">
@@ -258,7 +258,7 @@ var defaultPriceTemplate = `<div class="\{\{data.classes.product.prices\}\}" dat
   </div>`;
 
 var defaultDescriptionTemplate =
-  '<div class="{{data.classes.product.description}}" data-element="product.description">{{{data.descriptionHtml}}}</div>';
+  '<div class="\{\{data.classes.product.description\}\}" data-element="product.description">\{\{\{data.descriptionHtml\}\}\}</div>';
 
 var defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
 

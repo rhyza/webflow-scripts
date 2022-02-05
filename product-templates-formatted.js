@@ -1,4 +1,5 @@
-const defaultQuantityTemplate = `<div class="\{\{data.classes.product.quantity\}\} \{\{data.quantityClass\}\}" data-element="product.quantity">
+
+var defaultQuantityTemplate = `<div class="\{\{data.classes.product.quantity\}\} \{\{data.quantityClass\}\}" data-element="product.quantity">
     \{\{#data.contents.quantityDecrement\}\}
     <button class="\{\{data.classes.product.quantityButton\}\} \{\{data.classes.product.quantityDecrement\}\}" type="button" data-element="product.quantityDecrement">
       <span>-</span>
@@ -16,19 +17,19 @@ const defaultQuantityTemplate = `<div class="\{\{data.classes.product.quantity\}
     \{\{/data.contents.quantityIncrement\}\}
   </div>`;
 
-const defaultButtonTemplate = `<div class="\{\{data.classes.product.buttonWrapper\}\}" data-element="product.buttonWrapper">
+var defaultButtonTemplate = `<div class="\{\{data.classes.product.buttonWrapper\}\}" data-element="product.buttonWrapper">
     <button \{\{#data.buttonDisabled\}\}disabled\{\{/data.buttonDisabled\}\} class="\{\{data.classes.product.button\}\} \{\{data.buttonClass\}\}" data-element="product.button">
       \{\{data.buttonText\}\}
     </button>
   </div>`;
 
-const defaultImgTemplate = `\{\{#data.currentImage.srcLarge\}\}
+var defaultImgTemplate = `\{\{#data.currentImage.srcLarge\}\}
   <div class="\{\{data.classes.product.imgWrapper\}\}" data-element="product.imgWrapper">
     <img alt="\{\{data.currentImage.altText\}\}" data-element="product.img" class="\{\{data.classes.product.img\}\}" src="\{\{data.currentImage.srcLarge\}\}" />
   </div>
   \{\{/data.currentImage.srcLarge\}\}`;
 
-const defaultImgWithCarouselTemplate = `<div class="\{\{data.classes.product.imgWrapper\}\}" data-element="product.imageWrapper">
+var defaultImgWithCarouselTemplate = `<div class="\{\{data.classes.product.imgWrapper\}\}" data-element="product.imageWrapper">
     <div class="main-image-wrapper">
       <button type="button" class="carousel-button carousel-button--previous">
         Left
@@ -47,19 +48,19 @@ const defaultImgWithCarouselTemplate = `<div class="\{\{data.classes.product.img
     </div>
   </div>`;
 
-const defaultTitleTemplate =
-  '<h1 class="{{data.classes.product.title}}" data-element="product.title">{{data.title}}</h1>';
+var defaultTitleTemplate =
+  '<h1 class="\{\{data.classes.product.title\}\}" data-element="product.title">\{\{data.title\}\}</h1>';
 
-const defaultVariantTitleTemplate =
-  '{{#data.hasVariants}}<h2 class="{{data.classes.product.variantTitle}}" data-element="product.variantTitle">{{data.selectedVariant.title}}</h2>{{/data.hasVariants}}';
+var defaultVariantTitleTemplate =
+  '\{\{#data.hasVariants\}\}<h2 class="\{\{data.classes.product.variantTitle\}\}" data-element="product.variantTitle">\{\{data.selectedVariant.title\}\}</h2>\{\{/data.hasVariants\}\}';
 
-const defaultOptionsTemplate = `\{\{#data.hasVariants\}\}
+var defaultOptionsTemplate = `\{\{#data.hasVariants\}\}
   <div class="\{\{data.classes.product.options\}\}" data-element="product.options">
     \{\{\{data.optionsHtml\}\}\}
   </div>
   \{\{/data.hasVariants\}\}`;
 
-const defaultPriceTemplate = `<div class="\{\{data.classes.product.prices\}\}" data-element="product.prices">
+var defaultPriceTemplate = `<div class="\{\{data.classes.product.prices\}\}" data-element="product.prices">
     \{\{#data.selectedVariant\}\}
     <span class="visuallyhidden">\{\{data.priceAccessibilityLabel\}\}&nbsp;</span>
     <span class="\{\{data.classes.product.price\}\} \{\{data.priceClass\}\}" data-element="product.price">\{\{data.formattedPrice\}\}</span>
@@ -79,13 +80,12 @@ const defaultPriceTemplate = `<div class="\{\{data.classes.product.prices\}\}" d
     \{\{/data.selectedVariant\}\}
   </div>`;
 
-const defaultDescriptionTemplate =
-  '<div class="{{data.classes.product.description}}" data-element="product.description">{{{data.descriptionHtml}}}</div>';
+var defaultDescriptionTemplate =
+  '<div class="\{\{data.classes.product.description\}\}" data-element="product.description">\{\{\{data.descriptionHtml\}\}\}</div>';
 
-const defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
+var defaultButtonWithQuantityTemplate = `<div class="\{\{data.classes.product.buttonWithQuantity\}\}" data-element="product.buttonWithQuantity">${quantityTemplate}${buttonTemplate}</div>`;
 
-const defaultDetailsTemplate =
-  `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
+var defaultDetailsTemplate = `<div class="\{\{data.classes.product.details\}\}" data-element="product.details">
     ${defaultTitleTemplate}
     ${defaultVariantTitleTemplate}
     ${defaultPriceTemplate}
@@ -94,7 +94,7 @@ const defaultDetailsTemplate =
     ${defaultDescriptionTemplate}
   </div>`;
 
-const defaultProductTemplate = {
+export var defaultProductTemplate = {
   img: defaultImgTemplate,
   imgWithCarousel: defaultImgWithCarouselTemplate,
   title: defaultTitleTemplate,
